@@ -1,0 +1,73 @@
+body{
+    border:0;
+    margin: 0%;
+    font-family: 'Montserrat', sans-serif;
+}
+
+header{
+    background-color: #2eda87;
+    height: 45px;
+    display: flex;
+    border: 0px;
+    margin: 0%;
+    align-items: center;
+}
+
+header img{
+    display: flex;
+    width: 25px;
+    height: 25px;
+    margin: 15px;
+}
+
+.logo-header:hover{
+    opacity: 0.8;
+    transition-duration: 0.5s;
+}
+
+.foto{
+    height: 400px;
+    display: flex;
+    background: url("homem-calc.jpg") no-repeat top;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+.div1{
+    display: flex;
+    justify-content: center;
+}
+
+.div1 div{
+    justify-content: center;
+    background-color: #f3fbf7;
+    border: 2px solid #2eda87;
+    border-radius: 30px;
+    align-items: center;
+    margin: 200px;
+    padding: 30px;
+  
+}
+
+.div1 div input{
+    height: 20px;
+}
+
+footer{
+    background-color: #2eda87;
+    color: white;
+    height: 70px;
+    display: flex;
+    border: 0px;
+    margin: 0%;
+    align-items: flex-end;
+    justify-content: center;
+    font-size: 12px;
+}
+.bot{
+    border-radius: 10px;    
+}
+.h2{
+    display: flex;
+    justify-content: center;
+}

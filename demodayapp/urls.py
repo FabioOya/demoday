@@ -1,9 +1,9 @@
 from django.urls import path, include
-from demodayapp.views import index , sac , price
+from demodayapp.views import *
 
 urlpatterns = [
     path('', index),
-    path('sac', sac),
-    path('price', price)
-   
+    path('amortizacao/', amortizacao),
+    path('faleconosco/', faleconosco),
+    path('form', form),
 ]

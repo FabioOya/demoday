@@ -1,0 +1,69 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <script src="{% static 'js/script.js' %}" defer></script>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+    <title>Wecalc</title>
+</head>
+<body> 
+    
+    <header>
+        <img src="C:\Users\claud\Desktop\Wecalc\Wecalc-logo-branco.png" alt="" class="logo-header">
+        <nav>
+                <a href="/faleconosco">fale conosco</a>
+                <a href="/.. ">Home</a>
+            </nav>
+        
+    </header>
+    
+    <div class="foto">
+        <img src="demoday/demodayapp/static/img/Wecalc-logo.png" alt="Wecalc-logo">
+        <img src="demoday/demodayapp/static/img/homem-calc.jpg" alt="homem-calc">
+    </div>
+    <div class="div1">
+        <h1>Amortização</h1>
+        <p>Amortização é um processo de extinção de uma dívida através de pagamentos periódicos, que são realizados em função de um planejamento, de modo que cada prestação corresponde à soma do reembolso do capital ou do pagamento dos juros do saldo devedor, podendo ser o reembolso de ambos, sendo que os juros são sempre calculados sobre o saldo devedor.</p>
+    </div>
+    <div class="div2">
+        <h1>Sistema de Amortização Constante</h1>		
+		<form>
+			<fieldset>
+				<legend>Dados fornecidos</legend>
+				<label for="valorFinanciamento"><b>Valor do Financiamento:</b></label>
+				<input type="text" id="valorFinanciamento" />
+				<br />
+				<label for="juros"><b>Tx de Juros Anual(%):</b></label>
+				<input type="text" id="juros" />
+				<br />
+				<label for="periodo"><b>Periodo:</b></label>
+				<select id="periodo">
+					<option value="12">12 Meses</option>
+					<option value="24">24 Meses</option>
+					<option value="36">36 Meses</option>
+					<option value="48">48 Meses</option>
+					<option value="60">60 Meses</option>
+            <option value="72">72 Meses</option>
+				</select>
+				<br />
+				<input type="button" value="Calcular" onclick="pegarValores()" />								
+			</fieldset>
+		</form>
+		<form>
+			<fieldset>
+			<legend>Dados gerados</legend>
+				<div id="Resultado"></div>
+			</fieldset>						
+		</form>
+    </div>
+
+    <footer>
+        Wecalc.inc | 
+        Powered by Mastertech.
+    </footer>
+</body>
+</html>
