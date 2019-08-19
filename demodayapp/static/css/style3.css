@@ -22,10 +22,12 @@ header img{
 
 nav{
     display: flex;
-    align-items: flex-end;  
+    align-items: center;
+    justify-content: space-around;  
 }
 
 nav a{
+    
     color: white;
     text-decoration: none;
     padding: 30px;
@@ -34,60 +36,76 @@ nav a{
 nav a:hover{
     text-decoration: underline;
     transition-duration: 1s;
-    
 }
-
 
 .logo-header:hover{
     opacity: 0.8;
     transition-duration: 0.5s;
 }
 
-.foto{
-    height: 600px;
-    display: flex;
-    justify-content: center;
+.div1{
+    height: 180px;
     align-items: center;
-    flex-direction: column;
-    background: url(../img/homem-calc2.jpg);
-    background-attachment: fixed;
+    text-align: center;
+    margin: 0%;
+    border-bottom: 2px solid;
+    border-color: #2eda87;
+    background-image: url(../img/homem-calc.jpg);
+    background-repeat: no-repeat;
     background-size: cover;
     color: white;
 }
 
-.foto img{
-    width: 130px;
-    height: 130px;
+.div1 h1{
+    color: #2eda87;
+    margin: 0;
+    padding: 20px;
 }
 
-h2{
-    margin-top: 30px;
+.div1 p{
+    margin-left: 60px;
+    margin-right: 60px;
+}
+
+.div2 h1{
+    margin-left: 20px;  
+}
+
+fieldset{
     display: flex;
-    justify-content: center;
-    align-items: center;
+    margin: 20px;
 }
 
-.bot{
+.digite{
+    
+    margin-top: 25px;
+    border: none;
+    border-bottom: 1px solid;
+    border-color: gray;
+    width: 60%;
+    height: 30px;   
+}
+
+.div2 select{
+    margin-top: 35px;
+}
+
+.calc{
     background-color: #2eda87;
     border: none;
     color: white;
-    margin-top: 20px;
     padding: 10px 22px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    font-size: 14px;    
+    margin-top: 10px;
+    font-size: 12px;
 }
 
-.bot:hover{
+.calc:hover{
     background-color: lightgreen;
     transition-duration: 1s;
-}
-
-.h2{
-    height: 200px;
-    display: flex;
-    justify-content: center;
+    font-weight: bold;
 }
 
 .icons{
@@ -115,10 +133,4 @@ footer{
     font-size: 12px;
     
     
-}
-.texto{
-    display:flex;
-    justify-content: center;
-    text-justify: center;
-    width: 950px;
 }

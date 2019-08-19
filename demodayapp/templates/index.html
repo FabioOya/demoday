@@ -2,40 +2,48 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <link rel="stylesheet" href="{% static 'css/style.css' %}">
-        <script defer src="{% static 'js/script.js' %}" ></script>
-        <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
-        
-    <title>home</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">    
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <script defer src="{% static 'js/script.js' %}" ></script>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+    
+    <title>Home</title>
 </head>
 <body>
     
     <header>
-        <img src="C:\Users\claud\Desktop\Wecalc\Wecalc-logo-branco.png" alt="" class="logo-header">
+
+            <img src="{% static 'img/Wecalc-logo-branco.png' %}" alt="Wecalc-logo">
+      
         
-            <nav>
-                <a href="amortizacao">amortizacao</a>
-                <a href="/faleconosco">fale conosco</a>
-            </nav>
-            </header>
+        <nav>
+            <a href="faleconosco">Fale Conosco</a>
+            <a href="amortizacao">Amortização</a>
+        </nav>
+    </header>
+    
+    <div class="foto">
+       
+        <img src="{% static 'img/Wecalc-logo.png' %}" alt="Wecalc-logo">
 
-            <div class="foto">
-                <img src="{% static 'img/Wecalc-logo.png' %}" alt="Wecalc-logo">
-                <img src="{% static 'img/homem-calc.jpg' %}" alt="homem-calc">
-            </div>  
-
-
-            <div class="div1"></div>
-            <div class="div2"></div>
-            <footer>
-                    Wecalc.inc | 
-                    Powered by Mastertech.
-                </footer>
-
-
-
-</body>
-</html>
+        <div class ="texto">
+            <h2> Nossa intenção é auxiliar você, que está em busca do financiamento de um apartamento, faculdade, carro ou com alguma negociação em andamento. Sabemos das inúmeras dúvidas que surgem nessa etapa e a principal delas é: quanto terei que pagar ao final através da amortização?
+            Iremos te ajudar de forma simples e rápida a descobrir esses valores. </h2>
+        </div>  
+    </div>  
+    
+    
+    <footer>
+        <div class="icons">    
+                <p>Rede social</p>  
+                <img src="{% static 'img/facebook-logo-button.png' %}" alt="facebook">
+                <img src="{% static 'img/instagram.png' %}" alt="instagram">
+          
+        </div>  
+        <p class="rodape">Wecalc.inc | 
+            Powered by Mastertech.</p>
+        </footer>
+    </body>
+    </html>

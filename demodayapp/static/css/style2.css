@@ -2,6 +2,15 @@ body{
     border:0;
     margin: 0%;
     font-family: 'Montserrat', sans-serif;
+    background-image: url(../img/homem-calc2.jpg);
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: white;
+}
+
+h2{
+    color: #2eda87;
 }
 
 header{
@@ -34,7 +43,7 @@ nav a{
 nav a:hover{
     text-decoration: underline;
     transition-duration: 1s;
-    
+    font-weight: bold;
 }
 
 
@@ -43,40 +52,24 @@ nav a:hover{
     transition-duration: 0.5s;
 }
 
-.foto{
-    height: 600px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    background: url(../img/homem-calc2.jpg);
-    background-attachment: fixed;
-    background-size: cover;
-    color: white;
+.div1 div{
+    margin: 40px;
 }
 
-.foto img{
-    width: 130px;
-    height: 130px;
-}
-
-h2{
-    margin-top: 30px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.campo{
+    width: 400px;
+    height: 30px;
 }
 
 .bot{
     background-color: #2eda87;
     border: none;
     color: white;
-    margin-top: 20px;
-    padding: 10px 22px;
+    padding: 15px 32px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    font-size: 14px;    
+    font-size: 14px;
 }
 
 .bot:hover{
@@ -84,10 +77,8 @@ h2{
     transition-duration: 1s;
 }
 
-.h2{
-    height: 200px;
-    display: flex;
-    justify-content: center;
+.campo-msg{
+    min-width: 400px;
 }
 
 .icons{
@@ -116,9 +107,24 @@ footer{
     
     
 }
-.texto{
-    display:flex;
-    justify-content: center;
-    text-justify: center;
-    width: 950px;
+
+.icons img{
+    width: 30px;
+    height: 30px;
+    display: flex;
+    margin-top: 10px;
+    margin-left: 15px;
+}
+
+footer{
+    background-color: #2eda87;
+    color: white;
+    height: 55px;
+    display: flex;
+    border: 0px;
+    margin: 0%;
+    justify-content: space-around;
+    font-size: 12px;
+    
+    
 }

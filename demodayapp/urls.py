@@ -3,7 +3,7 @@ from demodayapp.views import *
 
 urlpatterns = [
     path('', index),
-    path('amortizacao/', amortizacao),
-    path('faleconosco/', faleconosco),
+    path('amortizacao', amortizacao),
+    path('faleconosco', faleconosco),
     path('form', form),
 ]
