@@ -51,8 +51,8 @@ function amortizar(principal, txJuros, periodo)
         "Taxa de Juros Anual: " + (txJuros*100).toFixed(2) +  "%<br />" +
         "Meses: " + periodo + "<br />" +
 		"Amortização Mensal: R$" + amortizacao.toFixed(2) + "<br />" +
-		"Total pago: R$" + (total_pago*periodo).toFixed(2) + "<br /><br />";
-		// "Total de juros pago: R$" + (total_pago*periodo) - principal.toFixed(2) + "<br /><br />";
+		"Total pago: R$" + (total_pago*periodo).toFixed(2) + "<br />" +
+		"Total de juros pago: R$" + (total_pago*periodo-principal).toFixed(2) + "<br /><br />";
         
     //adiciona linhas no header para tabela
 	resultado += "<table border='1'><tr><th>Mês</th><th>Saldo Devedor</th>" + 
