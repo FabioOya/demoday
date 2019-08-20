@@ -40,15 +40,19 @@ function amortizar(principal, txJuros, periodo)
 	var jurosMensal = Math.pow(1.0 + txJuros, 1.0 / 12) -1.0;
 	
 	//Calcular amortizacao
-    var amortizacao = principal / periodo
+	var amortizacao = principal / periodo
+
+	//calcula o valor do financiamento+juros totais
+	var total_pago = principal * (jurosMensal/(1-Math.pow(
+        1+jurosMensal, -periodo)));
 	    
 	//Começar a construir o retorno da string para mostrar a tabela de amortização
     var resultado = "Valor do Financiamento: R$" + principal.toFixed(2) +  "<br />" + 
         "Taxa de Juros Anual: " + (txJuros*100).toFixed(2) +  "%<br />" +
         "Meses: " + periodo + "<br />" +
 		"Amortização Mensal: R$" + amortizacao.toFixed(2) + "<br />" +
-		"Total pago: R$" + (periodo*amortizacao).toFixed(2) + "<br /><br />";
-		// "Total pago: R$" + saldo*(jurosMensal + 1.0).toFixed(2) + "<br /><br />";
+		"Total pago: R$" + (total_pago*periodo).toFixed(2) + "<br /><br />";
+		// "Total de juros pago: R$" + (total_pago*periodo) - principal.toFixed(2) + "<br /><br />";
         
     //adiciona linhas no header para tabela
 	resultado += "<table border='1'><tr><th>Mês</th><th>Saldo Devedor</th>" + 
