@@ -1,7 +1,7 @@
 function pegarValores()
 {
 	//click do botão pega os valores inputados
-	var saldo = parseFloat(document.getElementById("valorFinanciamento").value);
+	var principal = parseFloat(document.getElementById("valorFinanciamento").value);
 	var txJuros = 
 		parseFloat(document.getElementById("juros").value/100.0);
 	var periodo = parseInt(document.getElementById("periodo").value);
@@ -13,13 +13,13 @@ function pegarValores()
 	div.innerHTML = "";
 	
 	//valida inputs - mostra erro se invalidos, caso contrário, mostra tabela
-	var valSal = validarInputs(saldo);
+	var valSal = validarInputs(principal);
 	var valTxj = validarInputs(txJuros);
 
 	if (valSal && valTxj)
 	{
 		//Retornar div string se os inputs forem validos
-		div.innerHTML += amortizar(saldo, txJuros, periodo);
+		div.innerHTML += amortizar(principal, txJuros, periodo);
 	}
 	else
 	{
@@ -33,24 +33,25 @@ function pegarValores()
    Calcula os elementos necessarios ao financiamento usando os dados inputados pelo usuário
  então mostra cada parcela mensal amortizada
 */
-function amortizar(saldo, txJuros, periodo)
+function amortizar(principal, txJuros, periodo)
 {
     //Calcular a taxa de juros mensal
     //var jurosMensal = txJuros/12
 	var jurosMensal = Math.pow(1.0 + txJuros, 1.0 / 12) -1.0;
 	
-	//Calcular o pagamento
-    var pagamento = saldo / periodo
+	//Calcular amortizacao
+    var amortizacao = principal / periodo
 	    
 	//Começar a construir o retorno da string para mostrar a tabela de amortização
-    var resultado = "Valor do Financiamento: R$" + saldo.toFixed(2) +  "<br />" + 
-        "Taxa de Juros: " + (txJuros*100).toFixed(2) +  "%<br />" +
+    var resultado = "Valor do Financiamento: R$" + principal.toFixed(2) +  "<br />" + 
+        "Taxa de Juros Anual: " + (txJuros*100).toFixed(2) +  "%<br />" +
         "Meses: " + periodo + "<br />" +
-        "Amortização: R$" + pagamento.toFixed(2) + "<br />" +
-        "Total pago: R$" + saldo.toFixed(2) + "<br /><br />";
+		"Amortização Mensal: R$" + amortizacao.toFixed(2) + "<br />" +
+		"Total pago: R$" + (periodo*amortizacao).toFixed(2) + "<br /><br />";
+		// "Total pago: R$" + saldo*(jurosMensal + 1.0).toFixed(2) + "<br /><br />";
         
     //adiciona linhas no header para tabela
-	resultado += "<table border='1'><tr><th>Mês</th><th>Saldo</th>" + 
+	resultado += "<table border='1'><tr><th>Mês</th><th>Saldo Devedor</th>" + 
         "<th>Juros</th><th>Prestação</th>";
     
     /*
@@ -72,21 +73,21 @@ function amortizar(saldo, txJuros, periodo)
 		
 		
 		//exibe o saldo
-		resultado += "<td> R$" + saldo.toFixed(2) + "</td>";
+		resultado += "<td> R$" + principal.toFixed(2) + "</td>";
 		
 		//calcula e exibe juros
-		juros = saldo * jurosMensal;
+		juros = principal * jurosMensal;
 		resultado += "<td> R$" + juros.toFixed(2) + "</td>";
 		
 		//calcula e exibe parcela mensal
-		prestaçao = pagamento + juros;
+		prestaçao = amortizacao + juros;
 		resultado += "<td> R$" + prestaçao.toFixed(2) + "</td>";
 		
 		//termina a linha da tabela	
 		resultado += "</tr>";
 		
 		//atualiza o saldo para cada iteração
-		saldo = saldo - prestaçao;		
+		principal = principal - amortizacao;		
 	}
 	
 	//fecha a tabela
